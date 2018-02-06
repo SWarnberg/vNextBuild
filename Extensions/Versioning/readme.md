@@ -32,6 +32,9 @@
 - V1.27   - Engineering Issue #202
 - V1.28   - Issue #213 fix for UTF8 File encoding problems 
 - V1.29   - Issue #217 moved the ANdroid versioner to NodeJS
+- V1.30   - Issue #222 allowed more complex delimiters in version number format
+- V1.31   - Issue #233 added JSON and Angular versioner
+- V1.32   - Issue #254 allow version extraction to be bypassed for JSON Versioner 
 
 A set of tasks based on the versioning sample script to version tamping assemblies shown in the [VSTS documentation](https://msdn.microsoft.com/Library/vs/alm/Build/scripts/index
 ). These allow versioning of
@@ -45,6 +48,8 @@ A set of tasks based on the versioning sample script to version tamping assembli
 * VersionSharePoint - sets the version in a SharePoint 2013/2016/O365 Add-In
 * VersionWix - sets the version in a Wix Project
 * VersionAndroidManifest - Sets the versionName and versionCode values in an Android project
+* VersionJSONFile - Sets the version in a named field in a JSON file (tested in NPM package.json file)
+* VersionAngularFile - Sets the version in a named field in an enviroment.ts Angular file
 
 All these tasks take at least two parameters, which are both defaulted
 

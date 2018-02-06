@@ -3,7 +3,7 @@
   "name": "GenerateReleaseNotes",
   "friendlyName": "Generate Release Notes",
   "description": "Generates a release notes file in a format of your choice",
-    "helpMarkDown": "Version: 3.0.0. [More Information](https://github.com/rfennell/vNextBuild/wiki/GenerateReleaseNotes%20-Tasks/)",
+    "helpMarkDown": "Version: #{Build.BuildNumber}#. [More Information](https://github.com/rfennell/vNextBuild/wiki/GenerateReleaseNotes%20-Tasks/)",
 
   "category": "Utility",
   "visibility": [
@@ -11,7 +11,7 @@
                 ],
   "author": "Black Marble",
   "version": {
-    "Major": 3,
+    "Major": 1,
     "Minor": 0,
     "Patch": 0
   },
@@ -141,13 +141,32 @@
       "groupName": "advanced"
     },
     {
+      "name": "appendToFile",
+      "type": "boolean",
+      "label": "Append output file",
+      "defaultValue": "False",
+      "required": false,
+      "helpMarkDown": "A boolean flag whether to over-write output file or append to it.",
+      "groupName": "advanced"
+    },
+    {
+      "name": "showParents",
+      "type": "boolean",
+      "label": "Show parent workitems",
+      "defaultValue": "False",
+      "required": false,
+      "helpMarkDown": "A boolean flag whether to added parent work items of those associated with a build.",
+      "groupName": "advanced"
+    },
+    {
       "name": "wiFilter",
       "type": "string",
       "label": "List of Work Item types to include",
       "defaultValue": "",
       "required": false,
       "helpMarkDown": "A comma-separated list of Work Item types to include in the report. Use this to exclude Tasks, for instance.",
-      "groupName": "advanced"
+      "groupName": "advanced",
+      "visibleRule": "showParents = true"
     },
     {
       "name": "wiStateFilter",
@@ -156,7 +175,8 @@
       "defaultValue": "",
       "required": false,
       "helpMarkDown": "A comma-separated list of Work Item states to include in the report.",
-      "groupName": "advanced"
+      "groupName": "advanced",
+      "visibleRule": "showParents = true"
     }
 
   ],
